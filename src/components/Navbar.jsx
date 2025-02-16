@@ -7,7 +7,6 @@ const Navbar = () => {
   //import from next navigation
   const router = useRouter();
   const links = [
-    
     {
       title: "About",
       href: "/about",
@@ -23,6 +22,11 @@ const Navbar = () => {
     {
       title: "Contact",
       href: "/contact",
+    },
+
+    {
+      title: "Categories",
+      href: "/categories",
     },
   ];
 
@@ -41,21 +45,23 @@ const Navbar = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className={`${pathname === link.href ? "text-orange-400" : "text-white"}`}
+                className={`${
+                  pathname === link.href ? "text-orange-400" : "text-white"
+                }`}
               >
                 {link.title}
               </Link>
-            </li> 
-
+            </li>
           ))}
         </ul>
-        <button onClick={() => router.push("/login")} className="bg-gray-600 text-white px-4 py-2 rounded-md">
+        <button
+          onClick={() => router.push("/login")}
+          className="bg-gray-600 text-white px-4 py-2 rounded-md"
+        >
           Login
         </button>
       </nav>
-
     </div>
-
   );
 };
 
